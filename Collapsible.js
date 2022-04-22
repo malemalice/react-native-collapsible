@@ -217,9 +217,9 @@ export default class Collapsible extends Component {
       contentStyle.height = contentHeight;
     }
     const shouldRenderChildren =
-      renderChildrenCollapsed ||
-      ((!collapsed || (collapsed && animating)) &&
-        (animating || measuring || measured));
+  (renderChildrenCollapsed || !collapsed) ||
+  ((!collapsed || (collapsed && animating)) &&
+    (animating || measuring || measured));
 
     return (
       <Animated.View
